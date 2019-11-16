@@ -6,10 +6,12 @@ import {
   updateBook,
   deleteBook
 } from '../controllers/books.controller'
+import { tokenValidation } from '../utils'
 
 const router = Router()
 
 router
+  .use(tokenValidation)
   .route('/')
   .get(getBooks)
   .post(createBook)

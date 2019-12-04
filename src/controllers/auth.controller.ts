@@ -20,7 +20,7 @@ export async function signup(req: Request, res: Response) {
     expiresIn: 60 * 60 * 24
   })
 
-  res.header('authorization', token).json(result)
+  res.json({ token })
 }
 
 export async function signin(req: Request, res: Response) {

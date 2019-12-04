@@ -40,5 +40,5 @@ export async function signin(req: Request, res: Response) {
 
   const token: string = jwt.sign({ _id: user.id }, config.secret || '')
 
-  res.header('authorization', token).json(user)
+  res.json({ token, ...user })
 }
